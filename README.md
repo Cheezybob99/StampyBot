@@ -1,0 +1,2 @@
+# StampyBot
+Basic bot
