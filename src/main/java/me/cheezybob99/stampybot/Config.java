@@ -4,18 +4,21 @@ import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
 import java.io.*;
+import java.util.List;
 
 public class Config {
 
     private final String token;
     private final String guild;
     private final String adminRole;
+    private final List<String> statsRoles;
 
-    public Config(String token, String guild, String adminRole) {
+    public Config(String token, String guild, String adminRole, List<String> statsRoles) {
 
         this.token = token;
         this.guild = guild;
         this.adminRole = adminRole;
+        this.statsRoles = statsRoles;
 
     }
 
@@ -54,4 +57,9 @@ public class Config {
     public String getAdminRole() {
         return adminRole;
     }
+
+    public List<String> getStatsRoles() {
+        return statsRoles;
+    }
+
 }
