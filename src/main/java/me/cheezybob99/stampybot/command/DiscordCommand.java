@@ -2,7 +2,7 @@ package me.cheezybob99.stampybot.command;
 
 import me.cheezybob99.stampybot.Main;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
-import net.dv8tion.jda.api.requests.restaction.CommandUpdateAction.CommandData;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 public abstract class DiscordCommand {
 

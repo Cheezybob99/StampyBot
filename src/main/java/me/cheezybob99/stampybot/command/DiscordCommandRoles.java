@@ -1,13 +1,13 @@
 package me.cheezybob99.stampybot.command;
 
 import me.cheezybob99.stampybot.Main;
-import net.dv8tion.jda.api.entities.Command.OptionType;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
-import net.dv8tion.jda.api.requests.restaction.CommandUpdateAction.CommandData;
-import net.dv8tion.jda.api.requests.restaction.CommandUpdateAction.OptionData;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 
 import java.util.HashMap;
 

@@ -2,5 +2,7 @@
   "token": "",
   "guild": "",
   "adminRole": "",
-  "statsRoles": []
+  "statsRoles": [],
+  "alertStatus": [],
+  "statusChannel": ""
 }

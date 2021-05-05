@@ -12,13 +12,17 @@ public class Config {
     private final String guild;
     private final String adminRole;
     private final List<String> statsRoles;
+    private final List<String> alertStatus;
+    private final String statusChannel;
 
-    public Config(String token, String guild, String adminRole, List<String> statsRoles) {
+    public Config(String token, String guild, String adminRole, List<String> statsRoles, List<String> alertStatus, String statusChannel) {
 
         this.token = token;
         this.guild = guild;
         this.adminRole = adminRole;
         this.statsRoles = statsRoles;
+        this.alertStatus = alertStatus;
+        this.statusChannel = statusChannel;
 
     }
 
@@ -60,6 +64,14 @@ public class Config {
 
     public List<String> getStatsRoles() {
         return statsRoles;
+    }
+
+    public List<String> getAlertStatus() {
+        return alertStatus;
+    }
+
+    public String getStatusChannel() {
+        return statusChannel;
     }
 
 }

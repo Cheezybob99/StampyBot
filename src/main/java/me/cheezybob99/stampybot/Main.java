@@ -5,6 +5,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
+import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 public class Main {
 
@@ -29,10 +30,12 @@ public class Main {
         this.jda = JDABuilder.createDefault(config.getToken())
                 .setChunkingFilter(ChunkingFilter.ALL)
                 .setMemberCachePolicy(MemberCachePolicy.ALL)
-                .enableIntents(GatewayIntent.GUILD_MEMBERS)
+                .enableCache(CacheFlag.ACTIVITY)
+                .enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_PRESENCES)
                 .build()
                 .awaitReady();
         jda.addEventListener(new CommandManager(this));
+        new ListenerStatusChange(this);
 
     }
 
