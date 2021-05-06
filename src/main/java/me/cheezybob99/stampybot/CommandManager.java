@@ -1,6 +1,7 @@
 package me.cheezybob99.stampybot;
 
 import me.cheezybob99.stampybot.command.DiscordCommand;
+import me.cheezybob99.stampybot.command.DiscordCommandAddAlertWord;
 import me.cheezybob99.stampybot.command.DiscordCommandRoles;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
@@ -25,6 +26,7 @@ public class CommandManager extends ListenerAdapter {
     private void registerCommands() {
 
         commands.add(new DiscordCommandRoles(main));
+        commands.add(new DiscordCommandAddAlertWord(main));
 
         CommandUpdateAction commandUpdateAction = main.getJda().getGuildById(main.getConfig().getGuild()).updateCommands();
         for (DiscordCommand discordCommand : commands) {

@@ -50,6 +50,18 @@ public class Config {
 
     }
 
+    public static void saveConfig(String name, Object object)  {
+        try {
+            Gson gson = new Gson();
+            FileWriter fileWriter = new FileWriter(name);
+            gson.toJson(object, fileWriter);
+            fileWriter.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public String getToken() {
         return token;
     }
@@ -72,6 +84,11 @@ public class Config {
 
     public String getStatusChannel() {
         return statusChannel;
+    }
+
+    public void addFilterWord(String word) {
+        this.alertStatus.add(word.toLowerCase());
+        saveConfig("config.json", this);
     }
 
 }
