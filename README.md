@@ -1,2 +1,2 @@
 # StampyBot
-Basic bot
+Basic bot for <https://discord.gg/NUCNzzrsAc>
