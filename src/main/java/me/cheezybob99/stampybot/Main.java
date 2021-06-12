@@ -11,6 +11,7 @@ public class Main {
 
     private static Main main;
     private final Config config;
+    private final CommandManager commandManager;
     private final JDA jda;
 
     public static void main(String[] args)  {
@@ -34,7 +35,8 @@ public class Main {
                 .enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_PRESENCES)
                 .build()
                 .awaitReady();
-        jda.addEventListener(new CommandManager(this));
+        this.commandManager = new CommandManager(this);
+        jda.addEventListener(commandManager);
         new ListenerStatusChange(this);
 
     }
@@ -45,6 +47,10 @@ public class Main {
 
     public JDA getJda() {
         return jda;
+    }
+
+    public CommandManager getCommandManager() {
+        return commandManager;
     }
 
 }

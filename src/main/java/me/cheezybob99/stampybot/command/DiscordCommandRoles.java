@@ -7,7 +7,6 @@ import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
-import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 
 import java.util.HashMap;
 
@@ -62,7 +61,7 @@ public class DiscordCommandRoles extends DiscordCommand {
     @Override
     public CommandData buildCommand() {
         return new CommandData("roles", "View the role stats.")
-                .addOption(new OptionData(OptionType.BOOLEAN, "all_roles", "If true, show all roles, if false, show only character roles.").setRequired(true));
+                .addOption(OptionType.BOOLEAN, "all_roles", "If true, show all roles, if false, show only character roles.", true);
     }
 
 }

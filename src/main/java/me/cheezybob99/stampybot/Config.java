@@ -91,4 +91,9 @@ public class Config {
         saveConfig("config.json", this);
     }
 
+    public void removeFilterWord(String word) {
+        this.alertStatus.remove(word.toLowerCase());
+        saveConfig("config.json", this);
+    }
+
 }
